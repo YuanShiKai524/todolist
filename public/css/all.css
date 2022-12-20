@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Verdana, sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+}
+
+.app {
+  background-image: linear-gradient(#F0F6FE, #ECEDFD);
+  width: 400px;
+  height: 550px;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  padding: 10px 20px;
+}
+
+.header-wrapper {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid #C0C7D4;
+}
+
+.header-title,
+.header-subtitle {
+  margin: 0;
+  font-weight: lighter;
+}
+
+.header-title {
+  color: #A5AFD4;
+}
+
+.header-subtitle {
+  color: #C2CAD7;
+}
+
+/*# sourceMappingURL=all.css.map */
