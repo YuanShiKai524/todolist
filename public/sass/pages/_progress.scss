@@ -1,0 +1,27 @@
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.progress-percent {
+  color: rgb(109, 127, 201);
+  flex: 1;
+  font-size: 13px;
+}
+
+.progressbar-background,
+.progressbar-done {
+  border-radius: 12px;
+  height: 11px;
+}
+
+.progressbar-background {
+  flex: 9;
+  background-color: white;
+}
+
+.progressbar-done {
+  background-color: #9AB0F8;
+  width: 50%;
+}

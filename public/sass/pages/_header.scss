@@ -1,19 +1,20 @@
 .header-wrapper {
   margin-top: 20px;
   padding-bottom: 10px;
-  border-bottom: 1.5px solid #C0C7D4;
 }
 
 .header-title,
 .header-subtitle {
   margin: 0;
-  font-weight: lighter;
 }
 
 .header-title {
-  color: #A5AFD4;
+  color: rgb(110, 136, 188);
+  font-weight: 550;
 }
 
 .header-subtitle {
-  color: #C2CAD7;
+  color: rgb(174, 183, 197);
+  font-weight: normal;
+  font-size: 12px;
 }

@@ -4,42 +4,106 @@
 
 html,
 body {
-  font-family: Verdana, sans-serif;
+  font-family: system-ui;
+  font-size: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-image: liner-gradient(#EFF5FE, #EEF0FE);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #CED3F2;
+  border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c3c8ef;
 }
 
 html,
-body {
+body,
+ul {
   padding: 0;
 }
 
+ul {
+  margin: 0;
+}
+
 .app {
-  background-image: linear-gradient(#F0F6FE, #ECEDFD);
-  width: 400px;
-  height: 550px;
+  background-image: linear-gradient(rgba(195, 222, 250, 0.3), rgba(230, 230, 253, 0.8));
+  width: 420px;
+  height: 570px;
   margin: auto;
   position: relative;
-  top: 20px;
-  padding: 10px 20px;
+  top: 7px;
+  padding: 10px 35px 10px 20px;
 }
 
 .header-wrapper {
   margin-top: 20px;
   padding-bottom: 10px;
-  border-bottom: 1.5px solid #C0C7D4;
 }
 
 .header-title,
 .header-subtitle {
   margin: 0;
-  font-weight: lighter;
 }
 
 .header-title {
-  color: #A5AFD4;
+  color: rgb(110, 136, 188);
+  font-weight: 550;
 }
 
 .header-subtitle {
-  color: #C2CAD7;
+  color: rgb(174, 183, 197);
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.main {
+  padding: 15px 0;
+  border-top: 1.5px solid #C0C7D4;
+  border-bottom: 1.5px solid #C0C7D4;
+}
+
+.todo-list-container {
+  width: 400px;
+  height: 100px;
+  overflow-y: scroll;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.progress-percent {
+  color: rgb(109, 127, 201);
+  flex: 1;
+  font-size: 13px;
+}
+
+.progressbar-background,
+.progressbar-done {
+  border-radius: 12px;
+  height: 11px;
+}
+
+.progressbar-background {
+  flex: 9;
+  background-color: white;
+}
+
+.progressbar-done {
+  background-color: #9AB0F8;
+  width: 50%;
 }
 
 /*# sourceMappingURL=all.css.map */

@@ -4,5 +4,25 @@
 
 html,
 body {
-  font-family: Verdana,sans-serif;
+  font: {
+    family: system-ui;
+    size: 15px;
+  }
+}
+
+// 滾動條寬度
+::-webkit-scrollbar {
+  width: 7px;
+}
+// 滾動條背景(track)
+::-webkit-scrollbar-track {
+  background-image: liner-gradient(#EFF5FE, #EEF0FE);
+}
+// 滾動條控制部分(handle)
+::-webkit-scrollbar-thumb {
+  background-color: #CED3F2;
+  border-radius: 2.5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c3c8ef;
 }
