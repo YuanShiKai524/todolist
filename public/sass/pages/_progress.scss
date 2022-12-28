@@ -1,14 +1,17 @@
+// 包含百分比及進度條的整個組件部分 (progress)
 .progress-container {
   display: flex;
   align-items: center;
 }
 
+// 百分比的部分 (percent)
 .progress-percent {
-  color: rgb(109, 127, 201);
+  color: rgb(146, 159, 185);
   flex: 1;
   font-size: 13px;
 }
 
+// 進度條的部分 (progressbar)
 .progressbar-background,
 .progressbar-done {
   border-radius: 12px;
