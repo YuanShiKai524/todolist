@@ -72,16 +72,9 @@ ul {
   border-bottom: 1.5px solid #C0C7D4;
 }
 
-.todo-list-container {
-  width: 400px;
-  height: 100px;
-  overflow-y: scroll;
-}
-
 .progress-container {
   display: flex;
   align-items: center;
-  margin-bottom: 14px;
 }
 
 .progress-percent {
@@ -104,6 +97,23 @@ ul {
 .progressbar-done {
   background-color: #9AB0F8;
   width: 50%;
+}
+
+.todo-list-container {
+  width: 400px;
+  height: 202px;
+  overflow-y: scroll;
+  margin-top: 14px;
+}
+
+.item {
+  padding: 12px;
+  margin-right: 30px;
+  background-color: white;
+  border: 0px solid white;
+  border-left: 4px solid #6c80c2;
+  border-radius: 3px;
+  margin-bottom: 8px;
 }
 
 /*# sourceMappingURL=all.css.map */
