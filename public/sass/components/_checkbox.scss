@@ -1,10 +1,12 @@
+@use '../utilities/variables';
+
 // checkbox容器
 .checkbox-container {
   border: 1px solid lightgrey;
 }
 
 .checkbox-container-checked {
-  background-color: #6c80c2;
+  background-color: $primary-color;
 }
 
 .checkbox-container,

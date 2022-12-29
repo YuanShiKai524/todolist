@@ -1,3 +1,4 @@
+@use '../utilities/variables';
 // 包含百分比及進度條的整個組件部分 (progress)
 .progress-container {
   display: flex;
@@ -6,7 +7,7 @@
 
 // 百分比的部分 (percent)
 .progress-percent {
-  color: rgb(146, 159, 185);
+  color: $secondary-color;
   flex: 1;
   font-size: 13px;
 }

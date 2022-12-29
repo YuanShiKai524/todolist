@@ -210,4 +210,46 @@ ul {
   background-color: #CED3F2;
 }
 
+.add-todo-wrapper {
+  position: absolute;
+  bottom: 25px;
+  width: 86.5%;
+}
+.add-todo-wrapper h4 {
+  margin: 0 0 4px 0;
+  color: rgb(146, 159, 185);
+  font-size: 14px;
+}
+
+.add-todo-container {
+  display: flex;
+}
+.add-todo-container input {
+  border: 0px;
+  outline: none;
+  border-radius: 2px;
+  padding: 5px 12px;
+  box-sizing: content-box;
+  height: 30px;
+  margin-right: 5px;
+  flex: 1;
+}
+
+.add-btn {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+  background-color: #6c80c2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.add-btn div {
+  position: absolute;
+  color: white;
+  font-size: 33px;
+  bottom: 0px;
+  left: 13.5px;
+}
+
 /*# sourceMappingURL=all.css.map */

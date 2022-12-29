@@ -1,3 +1,4 @@
+@use '../utilities/variables';
 // 此scss為全局物件或共用樣式
 * {
   box-sizing: border-box;
@@ -21,7 +22,7 @@ body {
 }
 // 滾動條控制部分(handle)
 ::-webkit-scrollbar-thumb {
-  background-color: #CED3F2;
+  background-color: $tertiary-color;
   border-radius: 2.5px;
 }
 ::-webkit-scrollbar-thumb:hover {

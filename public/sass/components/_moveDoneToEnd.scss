@@ -1,3 +1,4 @@
+@use '../utilities/variables';
 // 整個move to end物件的容器
 .move-to-end-container {
   float: right;
@@ -7,7 +8,7 @@
 
   h6 {
     margin: 0 4px 0 0;
-    color: rgb(146, 159, 185);
+    color: $secondary-color;
   }
 }
 
@@ -41,5 +42,5 @@
 
 .switch-wrapper-on,
 .switch {
-  background-color: #CED3F2;
+  background-color: $tertiary-color;
 }

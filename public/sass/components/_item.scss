@@ -1,3 +1,4 @@
+@use '../utilities/variables';
 // 每個todo項目
 .item {
   position: relative;
@@ -5,7 +6,7 @@
   margin-right: 30px;
   background-color: white;
   border: 0px solid white;
-  border-left: 4px solid #6c80c2;
+  border-left: 4px solid $primary-color;
   border-radius: 3px;
   margin-bottom: 8px;
   display: flex;
@@ -15,7 +16,7 @@
 // 待辦事項內容
 .todo-content,
 .todo-content-done {
-  color: rgb(146, 159, 185);
+  color: $secondary-color;
   flex: 1;
   margin-left: 14px;
   font-size: 14px;
