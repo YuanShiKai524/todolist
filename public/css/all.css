@@ -169,4 +169,45 @@ ul {
   transform: rotate(45deg);
 }
 
+.move-to-end-container {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin: 12px 7px 0 0;
+}
+.move-to-end-container h6 {
+  margin: 0 4px 0 0;
+  color: rgb(146, 159, 185);
+}
+
+.switch-wrapper,
+.switch-wrapper-on {
+  display: flex;
+  width: 30px;
+  padding: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.switch-wrapper-on {
+  justify-content: flex-end;
+}
+
+.switch,
+.switch-on {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.switch-wrapper,
+.switch-on {
+  background-color: white;
+}
+
+.switch-wrapper-on,
+.switch {
+  background-color: #CED3F2;
+}
+
 /*# sourceMappingURL=all.css.map */
