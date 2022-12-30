@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 
 const AddTodo = ({ updateTotoList }) => {
 
@@ -11,20 +11,21 @@ const AddTodo = ({ updateTotoList }) => {
     }
   }
 
-  // 保存用戶輸入的待辦事項的內容
-  const [todo, setTodo] = useState("")
+  // 定義input輸入框的ref容器
+  const inputRef = useRef()
 
   // 定義新增todo項目的函數
   const addTodo = () => {
-    const newTodo = new Todo(todo, false)
+    const newTodo = new Todo(inputRef.current.value, false)
     updateTotoList(newTodo)
+    inputRef.current.value = ''
   }
 
   return (
     <div className='add-todo-wrapper'>
       <h4>Add to list</h4>
       <div className='add-todo-container'>
-        <input type="text" onChange={ event => setTodo(event.target.value) } />
+        <input type="text" ref={inputRef} />
         <div className='add-btn' onClick={addTodo}>
           <div>&#43;</div>
         </div>
