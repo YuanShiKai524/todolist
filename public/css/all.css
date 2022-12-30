@@ -72,6 +72,16 @@ ul {
   border-bottom: 1.5px solid #C0C7D4;
 }
 
+.init-list-container {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.init-list-container h2 {
+  color: grey;
+}
+
 .progress-container {
   display: flex;
   align-items: center;
@@ -101,7 +111,7 @@ ul {
 
 .todo-list-container {
   width: 400px;
-  height: 215px;
+  max-height: 215px;
   overflow-y: scroll;
   margin-top: 20px;
 }

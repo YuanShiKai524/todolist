@@ -1,12 +1,19 @@
 import React from 'react'
+import InitTodoList from './InitTodoList'
 import Progress from './Progress'
 import List from './List'
 
-const Main = () => {
+const Main = ({ todoList }) => {
   return (
     <div className='main'>
-      <Progress />
-      <List />
+      {
+        todoList.length === 0 ?
+        <InitTodoList /> :
+        <>
+          <Progress todoList={todoList} />
+          <List todoList={todoList} />
+        </>
+      }
     </div>
   )
 }
