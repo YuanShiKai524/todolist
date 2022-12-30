@@ -16,8 +16,13 @@ const AddTodo = ({ updateTotoList }) => {
 
   // 定義新增todo項目的函數
   const addTodo = () => {
-    const newTodo = new Todo(inputRef.current.value, false)
-    updateTotoList(newTodo)
+    // 判斷輸入框是否為空
+    if (inputRef.current.value.trim() === '') {
+      alert('輸入框不可為空，請重新輸入')
+    } else {
+      const newTodo = new Todo(inputRef.current.value, false)
+      updateTotoList(newTodo)
+    }
     inputRef.current.value = ''
   }
 
