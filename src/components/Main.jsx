@@ -3,15 +3,15 @@ import InitTodoList from './InitTodoList'
 import Progress from './Progress'
 import List from './List'
 
-const Main = ({ todoList }) => {
+const Main = ({ updateTodos, todos }) => {
   return (
     <div className='main'>
       {
-        todoList.length === 0 ?
+        todos.length === 0 ?
         <InitTodoList /> :
         <>
-          <Progress todoList={todoList} />
-          <List todoList={todoList} />
+          <Progress />
+          <List updateTodos={updateTodos} todos={todos} />
         </>
       }
     </div>

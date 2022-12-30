@@ -1,14 +1,13 @@
 import React from 'react'
 
-const Checkbox = ({ todo }) => {
+const Checkbox = ({ todo, updateTodos }) => {
 
   // 定義一個函數，處理是否被用戶勾選
   const checkHandler = () => {
-    // 如果用setter操作的話
-    // todo.updateDone = !todo.hasDone
-    
-    // 一般寫法
-    
+    // 先更改hasDone的布林值
+    todo.updateDone(todo)
+    // 再更新todos
+    updateTodos(todo)
   }
 
   return (
