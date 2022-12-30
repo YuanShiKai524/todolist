@@ -1,21 +1,13 @@
-import React, { useState } from 'react'
-import { nanoid } from 'nanoid'
+import React from 'react'
 import Checkbox from './Checkbox'
 
-const Item = ({ todoList }) => {
-
+const Item = ({ todo }) => {
   return (
-    <ul>
-      {
-        todoList.map((todo) => (
-          <li className='item' key={nanoid()}>
-            <Checkbox checked={todo.done} />
-            <div className='todo-content'>{todo.content}</div>
-            <div className='delete-btn'>&times;</div>
-          </li>
-        ))
-      }
-    </ul>
+    <li className='item'>
+      <Checkbox todo={todo} />
+      <div className={todo.hasDone ? 'todo-content-done' : 'todo-content'}>{todo.content}</div>
+      <div className='delete-btn'>&times;</div>
+    </li>
     // <ul>
     //   <li className='item'>
     //     <Checkbox checked />

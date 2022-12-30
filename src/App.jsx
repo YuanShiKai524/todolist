@@ -10,7 +10,7 @@ function App() {
   const [todoList, setTodoList] = useState([])
 
   // 定義一個更新todo list的函數
-  const updateTotoList = (todo) => {
+  const updateTodoList = (todo) => {
     setTodoList([...todoList, todo])
   }
 
@@ -19,7 +19,7 @@ function App() {
       <Header />
       <Main todoList={todoList} />
       <MoveDoneToEnd todoList={todoList} />
-      <AddTodo updateTotoList={updateTotoList} />
+      <AddTodo updateTodoList={updateTodoList} />
     </div>
   );
 }
