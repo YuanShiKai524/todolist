@@ -21,7 +21,7 @@ const AddTodo = ({ updateTodos, Todo }) => {
     <div className='add-todo-wrapper'>
       <h4>Add to list</h4>
       <div className='add-todo-container'>
-        <input type="text" ref={inputRef} />
+        <input type="text" placeholder='e.g. Learn React' ref={inputRef} />
         <div className='add-btn' onClick={addTodo}>
           <div>&#43;</div>
         </div>

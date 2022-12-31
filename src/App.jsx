@@ -46,6 +46,10 @@ function App() {
           setTodos([...todos])
       }
     }
+    // 獲取已完成事項數量的方法
+    get getDoneNumber() {
+      return todos.filter( todo => (todo.hasDone === true)).length
+    }
   }
 
   // 創建一個TodoList類別的實例對象
@@ -57,7 +61,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Main updateTodos={todoList.updateTodos} todos={todos} />
+      <Main todos={todos} updateTodos={todoList.updateTodos} getDoneNumber={todoList.getDoneNumber} />
       <MoveDoneToEnd />
       <AddTodo updateTodos={todoList.updateTodos} Todo={Todo} />
     </div>

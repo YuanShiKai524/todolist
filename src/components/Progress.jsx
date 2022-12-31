@@ -1,15 +1,9 @@
 import React from 'react'
 
-const Progress = ({ todos }) => {
+const Progress = ({ todos, getDoneNumber }) => {
 
-  // 先取得已完成事項的todos
-  const testedTodos = todos.filter( todo => (todo.hasDone === true))
-  // 已完成事項的數量
-  const numberOfDone = testedTodos.length
-  // todos總數量(包括未完成與已完成)
-  const numberOfTodos = todos.length
-  // 已完成進度佔比
-  const donePercent = Math.round(numberOfDone / numberOfTodos * 100)
+  // 計算完成率 (已完成事項數量 / todos中todo的總數量(包括未完成與已完成))，以四捨五入取至整數位
+  const donePercent = Math.round(getDoneNumber / todos.length * 100)
 
   return (
     <div className='progress-container'>
