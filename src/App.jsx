@@ -30,9 +30,12 @@ function App() {
     updateTodos(todo, action) {
       switch (action) {
         case 'remove':
-          const index = this.todos.indexOf(todo)
-          const newTodos = this.todos.splice(index, 1)
-          setTodos(newTodos)
+          // 取得該todo在todos中的位置
+          const index = todos.indexOf(todo)
+          // 刪除該todo
+          todos.splice(index, 1)
+          // 更新todos狀態成刪除後的todos
+          setTodos([...todos])
           break;
 
         // 由於更新todo跟新增todo的方法差不多，所以用一個判斷把它們都寫在default
