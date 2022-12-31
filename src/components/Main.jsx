@@ -10,7 +10,7 @@ const Main = ({ updateTodos, todos }) => {
         todos.length === 0 ?
         <InitTodoList /> :
         <>
-          <Progress />
+          <Progress todos={todos} />
           <List updateTodos={updateTodos} todos={todos} />
         </>
       }
