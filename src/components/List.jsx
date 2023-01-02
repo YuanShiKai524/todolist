@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Item from './Item'
 
-const List = ({ todos, updateTodos }) => {
+const List = ({ todos }) => {
 
   // 此state用於保存每次傳進來的(前一次)todos的長度(也就是todo的數量)
   const [todosLength, setTodosLength] = useState(todos.length)
@@ -27,7 +27,7 @@ const List = ({ todos, updateTodos }) => {
       <ul ref={ulRef}>
         {
           todos.map((todo) => (
-            <Item todo={todo} updateTodos={updateTodos} key={todo.id} />
+            <Item todo={todo} key={todo.id} />
           ))
         }
       </ul>

@@ -1,6 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useRef, useContext } from 'react'
+import { todoListContext } from '../App'
 
-const AddTodo = ({ updateTodos, Todo }) => {
+const AddTodo = ({ Todo }) => {
+
+  // 從todoListContext獲取updateTodos方法
+  const { updateTodos } = useContext(todoListContext)
 
   // 定義input輸入框的ref容器
   const inputRef = useRef()
