@@ -1,26 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { todoListContext } from '../App'
 
-const MoveDoneToEnd = ({ todos }) => {
+const MoveDoneToEnd = ({ todos, _switch }) => {
 
   // 從todoListContext獲取sort方法
-  const { sort } = useContext(todoListContext)
+  const { changeSwitch } = useContext(todoListContext)
 
-  // 管理switch開關的狀態(由於命名會與關鍵字switch衝突，因此前面加上底線)
-  const [_switch, setSwitch] = useState(false)
-
-  // 監測每次todos有變化時，用哪種排序的方式
-  useEffect(() => {
-    if (todos.length === 0) setSwitch(false)
-    _switch ? sort(true) : sort(false)
-  }, [])
-
-  // 創建一個控制switch(move done to end開關)的函數
+  // 創建一個控制switch(move done to end)開關的函數
   const switchHandler = () => {
     if (todos.length === 0) return;
     else {
-      sort(!_switch)
-      setSwitch(!_switch)
+      changeSwitch(!_switch)
     }
   }
 

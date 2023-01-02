@@ -34,7 +34,9 @@ function App() {
     updateTodos(todo, action) {
       switch (action) {
         case 'remove':
-          // 取得該todo在todos中的位置
+          // 如果數組只剩最後一個todo並且被要求刪除，則將move done to end的開關關閉
+          if (todos.length === 1) setSwitch(false)
+          // 取得欲刪除的todo在todos中的位置
           const index = todos.indexOf(todo)
           // 刪除該todo
           todos.splice(index, 1)
@@ -44,36 +46,23 @@ function App() {
 
         // 由於更新todo跟新增todo的方法差不多，所以用一個判斷把它們都寫在default
         default:
-          // 若todos內尚未有接收到的todo，則新增此todo，若已有重複id的todo存在，則重新渲染todos數組，以更新該todo的hasDone布林值
+          // 若todos內尚未有接收到的todo，則表示是新的todo，即新增此todo，但若已有重複id的todo存在，則透過setTodos更新該todo的hasDone布林值
           todos.indexOf(todo) === -1 ?
-          setTodos([...todos, todo]) :
-          setTodos([...todos])
-      }
-    }
-    // 排序todos的方法
-    sort(boolean) {
-      // 如果參數布林值(boolean)為false，則表示switch開關(move done to end)排序功能未開啟，反之，true則為排序功能開啟。
-      switch (boolean) {
-        // 依照未完成、已完成區分，將已完成事項都往列表下方移動(move done to end)，未完成事項則照時間順序排列在上方部分
-        case true:
-          // 將未完成事項取出，整理成一個數組
-          const doingTodos = todos.filter( todo => todo.hasDone === false )
-          // 將已完成事項取出，整理成一個數組
-          const doneTodos = todos.filter( todo => todo.hasDone === true )
-          // 最後將未完成事項與已完成事項的兩個數組合併，並用setTodos更新todos
-          const movedDoneToEndTodos = doingTodos.concat(doneTodos)
-          setTodos(movedDoneToEndTodos)
-          break;
-
-        // 預設為參數布林值(false)，表示move done to end開關未開啟，不使用move done to end之排序功能
-        default:
-          // 創建一個以添加時間之順序去排序的數組
-          // const sortedByTimeTodos = []
-          setTodos([...todos])
-          break;
+          // 用sortByTime函數先進行排序，再將返回的數組用於更新todos
+          setTodos(sortByTime(_switch, [...todos, todo])) :
+          // 用sortByTime函數先進行排序，再將返回的數組用於更新todos
+          setTodos(sortByTime(_switch, [...todos]))
       }
     }
 
+    // 切換(move done to end)開關，並排序todos的方法
+    changeSwitch(boolean) { // 如果參數布林值(boolean)為false，則表示move done to end開關(switch)排序功能關閉，反之，true則為排序功能開啟。
+      // 切換move done to end開關
+      setSwitch(boolean)
+      // 利用sortByTime函數取得照時間排序好的todos，以更新todos
+      setTodos(sortByTime(boolean, todos))
+    }
+    
     // 獲取已完成事項數量的方法
     get getDoneNumber() {
       return todos.filter( todo => (todo.hasDone === true)).length
@@ -86,12 +75,45 @@ function App() {
   // 用於維護todo list的狀態
   const [todos, setTodos] = useState(todoList.todos)
 
+  // move done to end開關的狀態(由於命名會與關鍵字switch衝突，因此前面加上底線)
+  const [_switch, setSwitch] = useState(false)
+
+  // 此函數用於獲取每個todo的time屬性，並且將它們進行按時間的排序
+  const sortByTime = (switchFlag, todos) => {
+    // 創建一個保存按時間排序好的容器數組
+    const sortedArr = []
+    // 從todos將各別的time屬性取出來變成一個數組
+    const times = todos.map( todo => todo.time )
+    // 照時間前後排序time數組
+    times.sort((a, b) => a - b)
+    // 用巢狀 for loop將時間與每個todo比對，並進行先後順序的排列，以獲得按時間排序的todos
+    for(let i = 0; i < times.length; i++) {
+      for(let j = 0; j < todos.length; j++) {
+        if (times[i] === todos[j].time) {
+          sortedArr.push(todos[j])
+        }
+      }
+    }
+    if (switchFlag) {
+      /* 若move done to end開關為開，依照未完成、已完成區分，將已完成事項都往列表下方移動(move done to end)，未完成事項則留在上方部分 */
+      // 將未完成事項取出，整理成一個數組
+      const doingTodos = sortedArr.filter( todo => todo.hasDone === false )
+      // 將已完成事項取出，整理成一個數組
+      const doneTodos = sortedArr.filter( todo => todo.hasDone === true )
+      // 最後將未完成事項與已完成事項的兩個數組合併，並返回合併後的新todos
+      return doingTodos.concat(doneTodos)
+    } else {
+      // 返回排序好的數組
+      return sortedArr
+    }
+  }
+
   return (
     <div className="app">
       <Header />
       <todoListContext.Provider value={todoList}>
         <Main todos={todos} />
-        <MoveDoneToEnd todos={todos} />
+        <MoveDoneToEnd todos={todos} _switch={_switch} />
         <AddTodo Todo={Todo} />
       </todoListContext.Provider>
     </div>
