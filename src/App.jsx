@@ -6,7 +6,7 @@ import MoveDoneToEnd from "./components/MoveDoneToEnd";
 import AddTodo from "./components/AddTodo";
 
 // 創建傳遞todoList的context
-export const todoListContext = createContext();
+export const TodoListContext = createContext();
 
 function App() {
 
@@ -111,11 +111,11 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <todoListContext.Provider value={todoList}>
+      <TodoListContext.Provider value={todoList}>
         <Main todos={todos} />
         <MoveDoneToEnd todos={todos} _switch={_switch} />
         <AddTodo Todo={Todo} />
-      </todoListContext.Provider>
+      </TodoListContext.Provider>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { todoListContext } from '../App'
+import { TodoListContext } from '../App'
 
 const MoveDoneToEnd = ({ todos, _switch }) => {
 
   // 從todoListContext獲取sort方法
-  const { changeSwitch } = useContext(todoListContext)
+  const { changeSwitch } = useContext(TodoListContext)
 
   // 創建一個控制switch(move done to end)開關的函數
   const switchHandler = () => {

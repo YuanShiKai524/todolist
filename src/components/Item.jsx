@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { todoListContext } from '../App'
+import { TodoListContext } from '../App'
 import Checkbox from './Checkbox'
 
 const Item = ({ todo }) => {
 
   // 從todoListContext獲取updateTodos方法
-  const { updateTodos } = useContext(todoListContext)
+  const { updateTodos } = useContext(TodoListContext)
 
   return (
     <li className='item'>
