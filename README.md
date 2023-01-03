@@ -2,7 +2,7 @@
 
 網站已部屬至Github pages上，請至下列網址查看：
 
-    
+    https://yuanshikai524.github.io/todolist/
 
 文件結構：
 
