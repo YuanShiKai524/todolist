@@ -7,7 +7,7 @@ const Checkbox = ({ todo, updateTodos }) => {
     // 先更改hasDone的布林值
     todo.updateDone(todo)
     // 再更新todos
-    updateTodos(todo)
+    updateTodos()
   }
 
   return (

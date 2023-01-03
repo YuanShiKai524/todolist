@@ -1,5 +1,3 @@
-## SAT 工智聯科技股份有限公司 應徵考題
-
 專案名稱：TodoList
 
 網站已部屬至Github pages上，請至下列網址查看：
@@ -23,7 +21,7 @@
           |---AddTodo.jsx         新增待辦事項(todo)的組件。
 
 
-以下概略性介紹sass目錄下的文件：
+以下介紹public內sass目錄下的文件：
 
   -- |---/sass   存放所有scss檔案之目錄。
         |

@@ -30,29 +30,24 @@ function App() {
     constructor() {
       this.todos = []
     }
-    // 更新todos的方法
-    updateTodos(todo, action) {
-      switch (action) {
-        case 'remove':
-          // 如果數組只剩最後一個todo並且被要求刪除，則將move done to end的開關關閉
-          if (todos.length === 1) setSwitch(false)
-          // 取得欲刪除的todo在todos中的位置
-          const index = todos.indexOf(todo)
-          // 刪除該todo
-          todos.splice(index, 1)
-          // 更新todos狀態成刪除後的todos
-          setTodos([...todos])
-          break;
-
-        // 由於更新todo跟新增todo的方法差不多，所以用一個判斷把它們都寫在default
-        default:
-          // 若todos內尚未有接收到的todo，則表示是新的todo，即新增此todo，但若已有重複id的todo存在，則透過setTodos更新該todo的hasDone布林值
-          todos.indexOf(todo) === -1 ?
-          // 用sortByTime函數先進行排序，再將返回的數組用於更新todos
-          setTodos(sortByTime(_switch, [...todos, todo])) :
-          // 用sortByTime函數先進行排序，再將返回的數組用於更新todos
-          setTodos(sortByTime(_switch, [...todos]))
-      }
+    // 新增todo的方法
+    addTodo(todo) {
+      setTodos(sortByTime(_switch, [...todos, todo]))
+    }
+    // 移除todo的方法
+    removeTodo(todo) {
+      // 如果數組只剩最後一個todo並且被要求刪除，則將move done to end的開關關閉
+      if (todos.length === 1) setSwitch(false)
+      // 取得欲刪除的todo在todos中的位置
+      const index = todos.indexOf(todo)
+      // 刪除該todo
+      todos.splice(index, 1)
+      // 更新todos狀態成刪除後的todos
+      setTodos([...todos])
+    }
+    // 更新todos的方法(用於當todo被勾選已完成或取消勾選時)
+    updateTodos() {
+      setTodos(sortByTime(_switch, [...todos]))
     }
 
     // 切換(move done to end)開關，並排序todos的方法
