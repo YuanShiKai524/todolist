@@ -1,0 +1,49 @@
+@use '../utilities/variables';
+
+// add todo整個部分的外層設定
+.add-todo-wrapper {
+  position: absolute;
+  bottom: 25px;
+  width: 86.5%;
+
+  h4 {
+    margin: 0 0 4px 0;
+    color: $secondary-color;
+    font-size: 14px;
+  }
+}
+
+// 輸入框與加號按鈕
+.add-todo-container {
+  display: flex;
+
+  input {
+    border: 0px;
+    outline: none;
+    border-radius: 2px;
+    padding: 5px 12px;
+    box-sizing: content-box;
+    height: 30px;
+    margin-right: 5px;
+    flex: 1;
+  }
+}
+
+// 加號按鈕
+.add-btn {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+  background-color: $primary-color;
+  border-radius: 3px;
+  cursor: pointer;
+  
+  div {
+    position: absolute;
+    color: white;
+    font-size: 33px;
+    bottom: 0px;
+    left: 13.5px;
+  }
+}

@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: system-ui;
+  font-size: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-image: liner-gradient(#EFF5FE, #EEF0FE);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #CED3F2;
+  border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c3c8ef;
+}
+
+html,
+body,
+ul {
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+.app {
+  background-image: linear-gradient(rgba(195, 222, 250, 0.3), rgba(230, 230, 253, 0.8));
+  width: 420px;
+  height: 570px;
+  margin: auto;
+  position: relative;
+  top: 7px;
+  padding: 16px 35px 16px 20px;
+}
+
+.header-wrapper {
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.header-title {
+  color: rgb(110, 136, 188);
+  font-weight: 550;
+}
+
+.header-subtitle {
+  color: rgb(174, 183, 197);
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.header-title,
+.header-subtitle {
+  margin: 0;
+}
+
+.main {
+  padding: 20px 0 17px 0;
+  border-top: 1.5px solid #C0C7D4;
+  border-bottom: 1.5px solid #C0C7D4;
+}
+
+.init-list-container {
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.init-list-container h2 {
+  color: grey;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+}
+
+.progress-percent {
+  color: rgb(146, 159, 185);
+  flex: 1;
+  font-size: 13px;
+}
+
+.progressbar-background,
+.progressbar-done {
+  border-radius: 12px;
+  height: 11px;
+}
+
+.progressbar-background {
+  flex: 9;
+  background-color: white;
+}
+
+.progressbar-done {
+  background-color: #9AB0F8;
+}
+
+.todo-list-container {
+  width: 400px;
+  max-height: 215px;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+.item {
+  position: relative;
+  padding: 11px 14px;
+  margin-right: 30px;
+  background-color: white;
+  border: 0px solid white;
+  border-left: 4px solid #6c80c2;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-content,
+.todo-content-done {
+  color: rgb(146, 159, 185);
+  flex: 1;
+  margin-left: 14px;
+  font-size: 14px;
+}
+
+.todo-content-done {
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  color: #c3c8ef;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.checkbox-container {
+  border: 1px solid lightgrey;
+}
+
+.checkbox-container-checked {
+  background-color: #6c80c2;
+}
+
+.checkbox-container,
+.checkbox-container-checked {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  left: 5.5px;
+  bottom: 4px;
+  width: 7px;
+  height: 12px;
+  margin-top: 2px;
+  border-bottom: 2.5px solid white;
+  border-right: 2.5px solid white;
+  border-radius: 1.5px;
+  transform: rotate(45deg);
+}
+
+.move-to-end-container {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin: 12px 7px 0 0;
+}
+.move-to-end-container h6 {
+  margin: 0 4px 0 0;
+  color: rgb(146, 159, 185);
+}
+
+.switch-wrapper,
+.switch-wrapper-on {
+  display: flex;
+  width: 30px;
+  padding: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.switch-wrapper-on {
+  justify-content: flex-end;
+}
+
+.switch,
+.switch-on {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.switch-wrapper,
+.switch-on {
+  background-color: white;
+}
+
+.switch-wrapper-on,
+.switch {
+  background-color: #CED3F2;
+}
+
+.add-todo-wrapper {
+  position: absolute;
+  bottom: 25px;
+  width: 86.5%;
+}
+.add-todo-wrapper h4 {
+  margin: 0 0 4px 0;
+  color: rgb(146, 159, 185);
+  font-size: 14px;
+}
+
+.add-todo-container {
+  display: flex;
+}
+.add-todo-container input {
+  border: 0px;
+  outline: none;
+  border-radius: 2px;
+  padding: 5px 12px;
+  box-sizing: content-box;
+  height: 30px;
+  margin-right: 5px;
+  flex: 1;
+}
+
+.add-btn {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+  background-color: #6c80c2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.add-btn div {
+  position: absolute;
+  color: white;
+  font-size: 33px;
+  bottom: 0px;
+  left: 13.5px;
+}
+
+/*# sourceMappingURL=all.css.map */

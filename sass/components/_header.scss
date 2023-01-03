@@ -1,0 +1,24 @@
+// header整體 外層樣式
+.header-wrapper {
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+// header中 大字的標題 (title)
+.header-title {
+  color: rgb(110, 136, 188);
+  font-weight: 550;
+}
+
+// header中 小字的標題 (subtitle)
+.header-subtitle {
+  color: rgb(174, 183, 197);
+  font-weight: normal;
+  font-size: 12px;
+}
+
+// 大小標題共同樣式
+.header-title,
+.header-subtitle {
+  margin: 0;
+}

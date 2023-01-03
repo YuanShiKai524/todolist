@@ -1,0 +1,34 @@
+@use '../utilities/variables';
+
+// checkbox容器
+.checkbox-container {
+  border: 1px solid lightgrey;
+}
+
+.checkbox-container-checked {
+  background-color: $primary-color;
+}
+
+.checkbox-container,
+.checkbox-container-checked {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+// 勾選符號(白色勾勾)
+.checkmark {
+  position: absolute;
+  left: 5.5px;
+  bottom: 4px;
+  width: 7px;
+  height: 12px;
+  margin-top: 2px;
+  border-bottom: 2.5px solid white;
+  border-right: 2.5px solid white;
+  border-radius: 1.5px;
+  transform: rotate(45deg);
+}
